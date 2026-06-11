@@ -27,19 +27,16 @@ export function HistoryPage() {
 
   const entries = useLiveQuery<ActivityEntry[]>(
     () => db.activityEntries.orderBy('date').reverse().toArray(),
-    [],
     []
   ) ?? []
 
   const activityTypes = useLiveQuery<ActivityType[]>(
     () => db.activityTypes.orderBy('sortOrder').toArray(),
-    [],
     []
   ) ?? []
 
   const companions = useLiveQuery<Companion[]>(
     () => db.companions.toArray(),
-    [],
     []
   ) ?? []
 
